@@ -1,0 +1,486 @@
+{
+  "meta": {
+    "version": "0.4.0-owner-preview",
+    "as_of": "2026-10-24",
+    "notice": "Internal UX research preview only, not an expert-reviewed public guide or supplier recommendation"
+  },
+  "sources": [
+    {
+      "id": "SRC-001",
+      "title": "FDA: GLP-1 receptor agonist drug safety communication",
+      "publisher": "U.S. FDA",
+      "kind": "Regulatory overview",
+      "url": "https://www.fda.gov/drugs/drug-safety-communications/update-fdas-ongoing-evaluation-reports-suicidal-thoughts-or-actions-patients-taking-certain-type",
+      "published": "Live advisory; date not independently checked",
+      "summary": "Lists FDA-approved GLP-1-related products including Ozempic, Wegovy, Mounjaro and Zepbound. Historical list; product labels may change."
+    },
+    {
+      "id": "SRC-002",
+      "title": "FDA Drug Trials Snapshot: Mounjaro",
+      "publisher": "U.S. FDA",
+      "kind": "Approval and trial summary",
+      "url": "https://www.fda.gov/drugs/drug-trials-snapshots/drug-trials-snapshots-mounjaro",
+      "published": "2022-05-13 (original approval)",
+      "summary": "Original May 13, 2022 approval and type 2 diabetes trial evidence for Mounjaro."
+    },
+    {
+      "id": "SRC-003",
+      "title": "FDA approves Zepbound for chronic weight management",
+      "publisher": "U.S. FDA",
+      "kind": "Approval announcement",
+      "url": "https://www.fda.gov/news-events/press-announcements/fda-approves-new-medication-chronic-weight-management",
+      "published": "2023-11-08",
+      "summary": "November 8, 2023 approval announcement; discusses evidence base and limitations for initial weight-management approval."
+    },
+    {
+      "id": "SRC-004",
+      "title": "FDA concerns with unapproved GLP-1 drugs",
+      "publisher": "U.S. FDA",
+      "kind": "Safety/regulatory advisory",
+      "url": "https://www.fda.gov/drugs/drug-alerts-and-statements/fdas-concerns-unapproved-glp-1-drugs-used-weight-loss",
+      "published": "Live advisory; date varies",
+      "summary": "Differentiates FDA-approved products, unapproved products and compounded drugs; warns about products sold under research-only labels."
+    },
+    {
+      "id": "SRC-005",
+      "title": "FDA: Certain bulk substances and safety concerns",
+      "publisher": "U.S. FDA",
+      "kind": "Compounding risk assessment",
+      "url": "https://www.fda.gov/drugs/human-drug-compounding/certain-bulk-drug-substances-use-compounding-may-present-significant-safety-risks",
+      "published": "Live safety list; date varies",
+      "summary": "Notes potential immunogenicity, characterization challenges, and limited safety information for BPC-157. Page includes category-history changes."
+    },
+    {
+      "id": "SRC-006",
+      "title": "FDA: July 23–24, 2026 compounding advisory meeting",
+      "publisher": "U.S. FDA",
+      "kind": "Advisory committee record",
+      "url": "https://www.fda.gov/advisory-committees/advisory-committee-calendar/july-23-24-2026-meeting-pharmacy-compounding-advisory-committee-07232026",
+      "published": "2026-07-23 to 2026-07-24",
+      "summary": "Lists BPC-157-related substances on advisory committee agenda. Committee discussion does not itself constitute final FDA rulemaking."
+    },
+    {
+      "id": "SRC-007",
+      "title": "ClinicalTrials.gov: BPC-157 hamstring injury study",
+      "publisher": "ClinicalTrials.gov",
+      "kind": "Study registry record",
+      "url": "https://clinicaltrials.gov/study/NCT07437547",
+      "published": "Record updated 2026-02-27",
+      "summary": "Investigational Phase 2 BPC-157 study, listed recruiting at the reviewed snapshot with no results posted. Registry sponsor provides the record."
+    },
+    {
+      "id": "SRC-008",
+      "title": "FDA approves Wegovy HD higher-dose semaglutide",
+      "publisher": "U.S. FDA",
+      "kind": "Approval announcement",
+      "url": "https://www.fda.gov/news-events/press-announcements/fda-approves-fourth-product-under-national-priority-voucher-program-higher-dose-semaglutide",
+      "published": "2026-03-19",
+      "summary": "March 19, 2026 higher-dose approval for certain adults; demonstrates product approvals and indications can change."
+    },
+    {
+      "id": "SRC-009",
+      "title": "FDA: 503A bulk drug substances",
+      "publisher": "U.S. FDA",
+      "kind": "Regulatory framework",
+      "url": "https://www.fda.gov/drugs/human-drug-compounding/bulk-drug-substances-used-compounding-under-section-503a-fdc-act",
+      "published": "Live regulatory framework; date varies",
+      "summary": "Defines nomination categories and the distinction between categories and actual eligibility for compounding."
+    },
+    {
+      "id": "SRC-010",
+      "title": "NLM: PubMed disclaimer",
+      "publisher": "National Library of Medicine",
+      "kind": "Evidence interpretation",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/disclaimer/",
+      "published": "Undated standing guidance",
+      "summary": "Inclusion in PubMed is not endorsement of article claims by NIH or the federal government."
+    },
+    {
+      "id": "SRC-011",
+      "title": "ClinicalTrials.gov: Understanding study records",
+      "publisher": "ClinicalTrials.gov",
+      "kind": "Evidence interpretation",
+      "url": "https://clinicaltrials.gov/study-basics/how-to-read-study-record",
+      "published": "Undated standing guidance",
+      "summary": "A study registry record is not evidence that an intervention has been proven effective."
+    }
+  ],
+  "compounds": [
+    {
+      "id": "semaglutide",
+      "name": "Semaglutide",
+      "subtitle": "GLP-1 receptor agonist",
+      "category": "Approved products exist",
+      "categoryType": "approved",
+      "summary": "Semaglutide is the active ingredient in several FDA-approved prescription products. The specific product, formulation, population and indication matter.",
+      "unknown": "Approval of Ozempic or Wegovy does not establish the identity, quality or safety of an unrelated research-labeled vial or compounded preparation.",
+      "claims": [
+        {
+          "id": "CL-001",
+          "type": "Regulatory",
+          "title": "FDA-approved semaglutide medications exist",
+          "text": "FDA identifies Ozempic, Rybelsus and Wegovy as approved semaglutide products. Approvals are product- and indication-specific.",
+          "sources": [
+            "SRC-001",
+            "SRC-008"
+          ],
+          "review": "Desk-reviewed, expert review pending"
+        },
+        {
+          "id": "CL-002",
+          "type": "Clinical",
+          "title": "Approved indications have clinical-evidence reviews",
+          "text": "FDA approval of specific semaglutide medicines follows its regulatory review of product-specific evidence; it is not a blanket approval of all formulations.",
+          "sources": [
+            "SRC-001",
+            "SRC-008"
+          ],
+          "review": "Desk-reviewed, expert review pending"
+        },
+        {
+          "id": "CL-003",
+          "type": "Limit",
+          "title": "Unapproved or compounded versions need separate scrutiny",
+          "text": "FDA warns unapproved GLP-1 versions have not undergone its premarket safety, effectiveness and quality review; compounded drugs are not FDA-approved.",
+          "sources": [
+            "SRC-004"
+          ],
+          "review": "Desk-reviewed, expert review pending"
+        }
+      ]
+    },
+    {
+      "id": "tirzepatide",
+      "name": "Tirzepatide",
+      "subtitle": "Dual GIP/GLP-1 receptor agonist",
+      "category": "Approved products exist",
+      "categoryType": "approved",
+      "summary": "Tirzepatide is the active ingredient in FDA-approved Mounjaro and Zepbound. Their clinical findings and indications apply to the respective reviewed products.",
+      "unknown": "A branded-drug approval does not establish that research-sold or compounded tirzepatide is equivalent, sterile, or appropriately labeled.",
+      "claims": [
+        {
+          "id": "CL-004",
+          "type": "Regulatory",
+          "title": "Mounjaro approved in 2022 for type 2 diabetes",
+          "text": "FDA lists the original Mounjaro approval date as May 13, 2022, and describes its evidence in adults with type 2 diabetes.",
+          "sources": [
+            "SRC-002"
+          ],
+          "review": "Desk-reviewed, expert review pending"
+        },
+        {
+          "id": "CL-005",
+          "type": "Regulatory",
+          "title": "Zepbound approved for weight management in 2023",
+          "text": "FDA announced approval on November 8, 2023, for chronic weight management in specified adult populations. Additional label changes require separate review.",
+          "sources": [
+            "SRC-003"
+          ],
+          "review": "Desk-reviewed, expert review pending"
+        },
+        {
+          "id": "CL-006",
+          "type": "Clinical",
+          "title": "Clinical trials support the initial Zepbound approval",
+          "text": "FDA describes two randomized, double-blind, placebo-controlled trials supporting the original adult weight-management indication. Results do not generalize automatically to other products.",
+          "sources": [
+            "SRC-003"
+          ],
+          "review": "Desk-reviewed, expert review pending"
+        },
+        {
+          "id": "CL-007",
+          "type": "Limit",
+          "title": "Unapproved versions are distinct from approved medicines",
+          "text": "FDA warns about quality, labeling and other risks for unapproved GLP-1 products, including certain products marketed for research only.",
+          "sources": [
+            "SRC-004"
+          ],
+          "review": "Desk-reviewed, expert review pending"
+        }
+      ]
+    },
+    {
+      "id": "bpc-157",
+      "name": "BPC-157",
+      "subtitle": "Investigational pentadecapeptide",
+      "category": "No FDA-approved drug identified",
+      "categoryType": "investigational",
+      "summary": "BPC-157 appears in investigational research and FDA compounding-safety discussions. Human efficacy and safety cannot be inferred from preclinical findings or trial registrations.",
+      "unknown": "There is no FDA-approved BPC-157 medicine identified in the reviewed primary sources. Its compounding-nomination history is evolving and requires a current regulatory recheck before publication.",
+      "claims": [
+        {
+          "id": "CL-008",
+          "type": "Regulatory",
+          "title": "BPC-157 has not been established as an FDA-approved medicine",
+          "text": "FDA materials treat BPC-157-related substances as candidates in a compounding evaluation, not as FDA-approved medicines. An advisory committee discussion is not a drug approval.",
+          "sources": [
+            "SRC-005",
+            "SRC-006",
+            "SRC-009"
+          ],
+          "review": "Desk-reviewed, expert/regulatory review pending"
+        },
+        {
+          "id": "CL-009",
+          "type": "Safety",
+          "title": "FDA identified potential safety and characterization concerns",
+          "text": "FDA reports potential immunogenicity issues and peptide-impurity or active-ingredient characterization challenges, with limited safety information for proposed administration routes.",
+          "sources": [
+            "SRC-005"
+          ],
+          "review": "Desk-reviewed, expert review pending"
+        },
+        {
+          "id": "CL-010",
+          "type": "Clinical",
+          "title": "A Phase 2 BPC-157 trial is registered",
+          "text": "ClinicalTrials.gov lists a randomized Phase 2 hamstring-injury study; its registration alone supplies no evidence of successful treatment. Results were not posted on the reviewed snapshot.",
+          "sources": [
+            "SRC-007",
+            "SRC-011"
+          ],
+          "review": "Desk-reviewed, expert review pending"
+        },
+        {
+          "id": "CL-011",
+          "type": "Limit",
+          "title": "The July 2026 advisory review is not final approval",
+          "text": "FDA scheduled BPC-157-related substances for discussion at its July 2026 advisory committee. Advisory recommendations and final FDA authorization are different processes.",
+          "sources": [
+            "SRC-006",
+            "SRC-009"
+          ],
+          "review": "Desk-reviewed, regulatory review pending"
+        }
+      ]
+    },
+    {
+      "id": "semax",
+      "name": "Semax",
+      "subtitle": "Synthetic research peptide",
+      "category": "Scientific synthesis pending",
+      "categoryType": "unreviewed",
+      "summary": "Semax is a synthetic peptide discussed in biomedical research. Our scientific evidence review for this substance has not been completed, so no claim of human effectiveness is presented here.",
+      "unknown": "Human safety and effectiveness have not been independently assessed by our project. Vendor certificates about chemical samples cannot answer these clinical questions.",
+      "claims": []
+    },
+    {
+      "id": "ghk-cu",
+      "name": "GHK-Cu",
+      "subtitle": "Copper-binding peptide complex",
+      "category": "Scientific synthesis pending",
+      "categoryType": "unreviewed",
+      "summary": "GHK-Cu refers to a copper-binding peptide complex. Research and product-marketing claims should be checked separately. Our scientific evidence synthesis is not yet complete.",
+      "unknown": "We have not completed expert review of proposed benefits, risks, or human evidence. Certificates on a supplier website concern reported samples, not clinical effectiveness.",
+      "claims": []
+    }
+  ],
+  "companies": [
+    {
+      "id": "particle",
+      "name": "Particle Peptides",
+      "domain": "particlepeptides.com",
+      "description": "Supplier website with a public Certificate of Analysis (COA) index. Entries are company-published and have not been authenticated by our platform.",
+      "source": "https://particlepeptides.com/en/coa-vault",
+      "observed": "2026-10-24",
+      "fields": [
+        [
+          "Legal business identity",
+          "Not independently verified",
+          "An accessible website does not by itself establish the legal entity operating it.",
+          null
+        ],
+        [
+          "Contact and location",
+          "Company-published; not verified",
+          "Published company contact details have not undergone an independent business-record check.",
+          "https://particlepeptides.com/en/coa-vault"
+        ],
+        [
+          "Product documentation",
+          "COA index observed",
+          "Public index included product names, reported lots and test dates.",
+          "https://particlepeptides.com/en/coa-vault"
+        ],
+        [
+          "Laboratory authenticity",
+          "Not independently confirmed",
+          "A Semax PDF bearing the name Liquilabs was opened during the pilot; laboratory issuance has not been independently authenticated.",
+          null
+        ],
+        [
+          "Batch correspondence",
+          "Open question",
+          "Semax index uses PO-2026345 while its vendor-hosted report uses 2026345; prefix mapping needs documentation.",
+          "https://particlepeptides.com/en/coa-vault"
+        ],
+        [
+          "Sterility / endotoxin",
+          "Product-specific review required",
+          "Selected Semax paperwork includes reported microbiological/endotoxin entries; no blanket conclusion applies to other lots.",
+          null
+        ],
+        [
+          "Price and sale conditions",
+          "Not checked",
+          "No current like-for-like price, inventory, shipping or return-policy review completed.",
+          null
+        ],
+        [
+          "Regulatory history",
+          "Not checked",
+          "No current enforcement or licensing assessment completed; absence of a finding is not a clean record.",
+          null
+        ],
+        [
+          "Corrections / company response",
+          "Not requested",
+          "Company has not been invited to respond to any assessment in this prototype.",
+          null
+        ]
+      ]
+    },
+    {
+      "id": "polaris",
+      "name": "Polaris Peptides",
+      "domain": "polarispeptides.com",
+      "description": "Supplier website with public peptide-blend product listings and seller-presented laboratory information; not a verified supplier endorsement.",
+      "source": "https://polarispeptides.com/product/ghk-tb-bpc-glow/",
+      "observed": "2026-10-24",
+      "fields": [
+        [
+          "Legal business identity",
+          "Not independently verified",
+          "The name on a website is not a verified legal entity.",
+          null
+        ],
+        [
+          "Contact and location",
+          "Not checked",
+          "No independent contact/address validation completed.",
+          null
+        ],
+        [
+          "Product documentation",
+          "Seller listing observed",
+          "A GLOW 70 blend listing names GHK-Cu, TB-500 and BPC-157. Blends are not equivalent to standalone products.",
+          "https://polarispeptides.com/product/ghk-tb-bpc-glow/"
+        ],
+        [
+          "Laboratory authenticity",
+          "Not independently confirmed",
+          "Seller-hosted paperwork for a different GLOW 50 lot was inspected in our pilot; corresponding issuer report was not independently located.",
+          null
+        ],
+        [
+          "Batch correspondence",
+          "Open question",
+          "Documentation for GLOW 50 cannot be transferred to GLOW 70 or other lots.",
+          "https://polarispeptides.com/product/ghk-tb-bpc-glow/"
+        ],
+        [
+          "Sterility / endotoxin",
+          "Not established for displayed offering",
+          "A listed HPLC result, by itself, cannot establish sterility or endotoxin testing for this product/lot.",
+          null
+        ],
+        [
+          "Price and sale conditions",
+          "Not assessed comparably",
+          "The page may advertise a price, but a blend is not comparable to a standalone peptide by vial price.",
+          null
+        ],
+        [
+          "Regulatory history",
+          "Not checked",
+          "The pilot did not perform a current authoritative enforcement check.",
+          null
+        ],
+        [
+          "Corrections / company response",
+          "Not requested",
+          "Supplier response and correction workflow have not started.",
+          null
+        ]
+      ]
+    }
+  ],
+  "listings": [
+    {
+      "id": "particle-bpc",
+      "compound": "bpc-157",
+      "company": "particle",
+      "name": "BPC-157 5 mg with Mannitol",
+      "type": "Standalone listed formulation",
+      "lot": "PO-2026346",
+      "observed": "2026-10-24",
+      "reportDate": "2026-09-03",
+      "source": "https://particlepeptides.com/en/coa-vault",
+      "sourceLabel": "Company COA index",
+      "evidence": "Company-published certificate index entry",
+      "auth": "Original PDF for this lot not independently opened or authenticated",
+      "price": null
+    },
+    {
+      "id": "polaris-glow",
+      "compound": "bpc-157",
+      "company": "polaris",
+      "name": "GLOW 70 blend (GHK-Cu + TB-500 + BPC-157)",
+      "type": "Multi-ingredient blend, not standalone BPC-157",
+      "lot": "POL-GLOW70-1 (seller page)",
+      "observed": "2026-10-24",
+      "reportDate": "Not independently authenticated",
+      "source": "https://polarispeptides.com/product/ghk-tb-bpc-glow/",
+      "sourceLabel": "Seller's product page",
+      "evidence": "Product listing on seller site",
+      "auth": "Seller-presented laboratory entries have not been issuer-authenticated",
+      "price": null
+    },
+    {
+      "id": "particle-semax",
+      "compound": "semax",
+      "company": "particle",
+      "name": "Semax 10 mg",
+      "type": "Standalone listed formulation",
+      "lot": "PO-2026345",
+      "observed": "2026-10-24",
+      "reportDate": "2026-09-20",
+      "source": "https://particlepeptides.com/en/coa-vault",
+      "sourceLabel": "Company COA index",
+      "evidence": "Vendor-hosted report previously examined, no independent issuer confirmation",
+      "auth": "Index-to-report batch prefix correspondence remains unresolved",
+      "price": null
+    },
+    {
+      "id": "particle-ghk",
+      "compound": "ghk-cu",
+      "company": "particle",
+      "name": "GHK-Cu 50 mg with Mannitol",
+      "type": "Standalone listed formulation",
+      "lot": "PO-2026369",
+      "observed": "2026-10-24",
+      "reportDate": "2026-10-16",
+      "source": "https://particlepeptides.com/en/coa-vault",
+      "sourceLabel": "Company COA index",
+      "evidence": "Company-published certificate index entry",
+      "auth": "Underlying report not independently reviewed for this lot",
+      "price": null
+    },
+    {
+      "id": "polaris-ghk",
+      "compound": "ghk-cu",
+      "company": "polaris",
+      "name": "GLOW 70 blend (includes GHK-Cu)",
+      "type": "Multi-ingredient blend, not standalone GHK-Cu",
+      "lot": "POL-GLOW70-1 (seller page)",
+      "observed": "2026-10-24",
+      "reportDate": "Not independently authenticated",
+      "source": "https://polarispeptides.com/product/ghk-tb-bpc-glow/",
+      "sourceLabel": "Seller's product page",
+      "evidence": "Product listing on seller site",
+      "auth": "Product-specific report origin and lot mapping unverified",
+      "price": null
+    }
+  ]
+}
