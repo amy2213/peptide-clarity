@@ -11,7 +11,7 @@ Repository: https://github.com/amy2213/peptide-clarity
 The [Development Control Center](docs/CONTROL_CENTER.md) indexes project rules, decisions, requirements, changes, QA and release records. The controlling approved GOV-001 master standard and the working PDP originals remain in the project Library; public repo summaries do not supersede them.
 
 - [Requirements and backlog](docs/REQUIREMENTS_REGISTER.md) · [GitHub Issues](https://github.com/amy2213/peptide-clarity/issues)
-- [Change register](docs/CHANGE_REGISTER.md) · [Changelog](CHANGELOG.md) · [Release history](docs/RELEASE_HISTORY.md)
+- [Change register](docs/CHANGE_REGISTER.md) · [Decision register](docs/DECISION_REGISTER.md) · [Assumptions and risks](docs/ASSUMPTIONS_AND_RISKS.md) · [Changelog](CHANGELOG.md) · [Release history](docs/RELEASE_HISTORY.md)
 - [Engineering standards](docs/ENGINEERING_STANDARDS.md) · [Contributor workflow](CONTRIBUTING.md) · [Release checklist](docs/RELEASE_CHECKLIST.md)
 - [Proposed v0.3 PDP scope addendum](docs/PRODUCT_SCOPE_PDP-001_v0.3_WORKING.md): FDA-approved medicine access, compounded medications, and research supplier evidence are **distinct**. This document is a **draft**, not PDP v1.0 or G7 approval.
 - [CHG-001 bootstrap](https://github.com/amy2213/peptide-clarity/issues/6) · [OPS-001 CI/branch protection follow-up](https://github.com/amy2213/peptide-clarity/issues/13)
