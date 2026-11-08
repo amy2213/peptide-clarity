@@ -24,5 +24,5 @@ jobs:
       - name: Run structural and provenance-reference checks
         run: node scripts/validate-repo.mjs
       - name: Check diff whitespace
-        run: git diff --check HEAD^ HEAD || true
+        run: git diff --check HEAD^ HEAD
 # A green check is not G7 release approval or a scientific, WCAG, or security certification.
