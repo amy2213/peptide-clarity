@@ -10,7 +10,7 @@ The entries here summarize **repository changes**, not independently verified me
 
 ## 2026-11-08 | CHG-001 · Development control system
 
-- Introduced controlled documentation index, requirements and change registers, engineering process, contribution guidance, issue and PR templates, proposed v0.3 PDP scope addendum, release checklist and dependency-free structural CI.
+- Introduced controlled documentation index, requirements and change, decision, assumption and risk registers, engineering process, contribution guidance, issue and PR templates, proposed v0.3 PDP scope addendum, release checklist and dependency-free structural CI.
 - **No changes to `index.html` or embedded research records.** Control infrastructure only.
 - Owner's explicit 2026-11-08 go-ahead covers infrastructure setup; future scope and public releases remain subject to GOV-001 and G7.
 - Main-branch protection and validated CI execution are separately tracked in [OPS-001](https://github.com/amy2213/peptide-clarity/issues/13).
