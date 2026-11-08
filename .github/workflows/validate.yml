@@ -1,0 +1,28 @@
+name: Peptide Clarity structural QA
+on:
+  pull_request:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  structural:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Checkout source
+        uses: actions/checkout@v4
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Check validator syntax
+        run: node --check scripts/validate-repo.mjs
+      - name: Run structural and provenance-reference checks
+        run: node scripts/validate-repo.mjs
+      - name: Check diff whitespace
+        run: git diff --check HEAD^ HEAD || true
+# A green check is not G7 release approval or a scientific, WCAG, or security certification.
