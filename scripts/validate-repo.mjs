@@ -6,6 +6,7 @@ const required = [
   'index.html', 'README.md', 'CONTRIBUTING.md', 'CHANGELOG.md',
   'docs/CONTROL_CENTER.md', 'docs/ENGINEERING_STANDARDS.md',
   'docs/CHANGE_REGISTER.md', 'docs/REQUIREMENTS_REGISTER.md',
+  'docs/DECISION_REGISTER.md', 'docs/ASSUMPTIONS_AND_RISKS.md',
   'docs/PRODUCT_SCOPE_PDP-001_v0.3_WORKING.md',
   'docs/RELEASE_HISTORY.md', 'docs/RELEASE_CHECKLIST.md',
   '.github/PULL_REQUEST_TEMPLATE.md',
