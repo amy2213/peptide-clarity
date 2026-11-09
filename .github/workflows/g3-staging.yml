@@ -49,6 +49,9 @@ jobs:
           test "$(docker run --rm --network host -e PGPASSWORD=ci-only-web-password postgres:17 psql -h 127.0.0.1 -U pc_ci_web -d poc_test -tAc 'SELECT count(*) FROM pc_preview.substances' | tr -d '[:space:]')" = "84"
       - name: Install isolated Next.js dependencies
         run: npm install --prefix apps/web --no-audit --no-fund
+      - name: Emit temporary dependency lock chunks for controlled commit
+        run: |
+          node -e "const fs=require('fs');const raw=fs.readFileSync('apps/web/package-lock.json').toString('base64');for(let i=0;i<raw.length;i+=2000)console.log('PC_LOCK_CHUNK:'+String(i/2000).padStart(3,'0')+':'+raw.slice(i,i+2000))"
       - name: Check TypeScript and create production build
         run: |
           npm run build --prefix apps/web
