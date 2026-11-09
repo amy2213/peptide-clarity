@@ -12,6 +12,7 @@ erDiagram
  PRODUCTS ||--o{ PRODUCT_INGREDIENTS : contains
  ORGANIZATIONS ||--o{ PRODUCTS : lists_or_makes
  ORGANIZATIONS ||--o{ ORGANIZATION_ROLES : has
+ ORGANIZATIONS ||--o{ ORGANIZATION_OBSERVATIONS : has_observed_claims
  PRODUCTS ||--o{ REGULATORY_PRODUCT_RECORDS : regulatory_history
  REGULATORY_PRODUCT_RECORDS ||--o{ APPROVED_INDICATIONS : substantiated_by
  ORGANIZATIONS ||--o{ PHARMACY_LICENSES : licensed_in
@@ -26,6 +27,7 @@ erDiagram
  ORGANIZATIONS ||--o{ REPORTED_LOTS : reports
  PRODUCTS ||--o{ REPORTED_LOTS : possibly_corresponds
  REPORTED_LOTS ||--o{ LOT_SUBSTANCE_OBSERVATIONS : recorded_association
+ LOT_SUBSTANCE_OBSERVATIONS ||--o{ ANALYTICAL_OBSERVATIONS : reports_unverified_results
  SUBSTANCES ||--o{ LOT_SUBSTANCE_OBSERVATIONS : claimed_in
  REPORTED_LOTS ||--o{ LAB_REPORTS : claimed_report
  LAB_REPORTS ||--o{ LAB_MEASUREMENTS : reports
@@ -51,6 +53,7 @@ erDiagram
 | `catalog.substances` | `id`, `legacy_id UNIQUE`, `name`, `kind`, `legacy_group_raw`, `summary_draft`, `status` | Kind permits peptide, related non-peptide, protein, blend/marketing term, unknown; no compound-level FDA approval assertion |
 | `catalog.substance_aliases` | `id`, `substance_id FK`, `value`, `alias_kind`, `source_id?` | Classify product-brand names, codes and marketing names; preserve raw aliases; no uncontrolled synonym equivalence |
 | `catalog.organizations` | `id`, `legacy_id?`, `display_name`, `domain?`, `identity_review_status` | No “licensed” inference from website existence |
+| `evidence.organization_observations` | `id`, `organization_id FK`, `legacy_company_id`, `ordinal`, `field_label`, `reported_value_raw`, `note_raw?`, `source_url?` | Preserve the company fields tuple verbatim; company-published value ≠ verified legal, licensing or commerce fact |
 | `catalog.organization_roles` | `organization_id FK`, `role`, `jurisdiction?` | Research supplier, approved-drug manufacturer, compounding pharmacy, retail pharmacy, lab, unknown; role claims need source |
 | `catalog.products` | `id`, `organization_id?`, `name`, `product_type`, `formulation?`, `status` | Product types segregate FDA-approved finished medicine, compounded, investigational, research listing, blend, unknown; can be draft/undetermined |
 | `catalog.product_ingredients` | `id`, `product_id FK`, `substance_id FK`, `reported_amount?`, `unit?` | Many-to-many, provenance and asserted vs verified identity; blend ingredients do not create extra lots |
@@ -66,6 +69,7 @@ erDiagram
 | `evidence.reported_lots` | `id`, `organization_id FK`, `product_id?`, `reported_lot_code`, `identity_status` | A normalized grouping is **not** verified physical lot identity; potential duplicate held for review |
 | `evidence.lot_substance_observations` | `id`, `reported_lot_id FK`, `substance_id FK`, `legacy_row_id UNIQUE`, `observed_at?`, `source_id` | Preserve **all 15** legacy associations, including two pointing to Polaris GLOW code |
 | `evidence.lab_reports` | `id`, `reported_lot_id FK`, `issuer_organization_id?`, `source_id?`, `document_id?`, `issuer_authenticated`, `custody_verified`, `method_review` | Distinct false vs not checked; no report means no invented report row; issuer named ≠ authenticated |
+| `evidence.analytical_observations` | `id`, `lot_association_id FK`, `reported_metric`, `result_num?`, `result_text_raw?`, `unit?`, `source_id?`, `evidence_level_raw?`, `report_id?` | Seller-reported purity/assay/testing fields are not lab authentication; valid even with **no** inspected PDF/report |
 | `evidence.lab_measurements` | `id`, `lab_report_id FK`, `analyte`, `result_num?`, `result_text?`, `unit?`, `method?`, `interpretation_status` | Numerical value only if represented as reported, with units and method; do not convert/mislabel reported purity as safety |
 | `evidence.verification_events` | `id`, `subject_type`, `subject_id`, `verification_type`, `outcome`, `reviewer_id?`, `event_at`, `evidence_source_id?` | Distinguish **not attempted**, attempted/unresolved, verified, disputed, superseded; immutable history |
 | `evidence.evidence_issues` | `id`, `legacy_id UNIQUE`, `organization_id?`, `reported_lot_id?`, `source_id?`, `status`, `summary` | Open issues stay open until documented reconciliation |
@@ -163,6 +167,7 @@ create table evidence.lot_substance_observations (
 - `regulatory_product_records(product_id, jurisdiction, verified_at)` for date-specific approvals; avoid `latest` if not checked.
 - `pharmacy_licenses(organization_id, jurisdiction, verified_at)` for license freshness.
 - `reported_lots(organization_id, reported_lot_code)` as lookup index but potential duplicates require cautious grouping, not blind unique constraint until normalized and reconciled.
+- `analytical_observations(lot_association_id, reported_metric)` for vendor-claimed measurements even without an authenticated laboratory report.
 - `price_observations(product_id, organization_id, observed_at DESC)`; do not compare incomparable units.
 - `public_profiles(snapshot_id, subject_type, subject_id)` for fast read-only published rendering.
 
@@ -176,6 +181,7 @@ All public queries must be scoped by a **published snapshot** and sanitized DTO.
 - `reported_lots.reported_lot_code = PO-2026346` (reported key, not authenticated lot).
 - `lot_substance_observations.legacy_row_id = LOT-PAR-BPC-2026346`.
 - `sources.legacy_id = SUP-101` vendor index and `SUP-102` inspected seller-hosted PDF, where available.
+- `analytical_observations` stores raw seller-reported purity, quantity and microbiology values as applicable, regardless of whether a report is inspected.
 - Optional `lab_reports` record if actual report inspected; issuer-named text and verification state separate.
 - The resulting public evidence statement, **if reviewed and authorized**: seller-hosted document reports analytical observations for a claimed lot; issuer authentication and custody remain unverified. No medical-use safety inference.
 
