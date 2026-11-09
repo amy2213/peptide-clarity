@@ -1,0 +1,69 @@
+name: Peptide Clarity owner-preview staging security QA
+on:
+  pull_request:
+    paths:
+      - 'apps/web/**'
+      - 'poc/sql/postgres/**'
+      - 'poc/tests/owner-preview-http.test.mjs'
+      - '.github/workflows/g3-staging.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  secure-db-api:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    services:
+      postgres:
+        image: postgres:17
+        env:
+          POSTGRES_PASSWORD: ci-only-postgres-password
+          POSTGRES_DB: poc_test
+        ports:
+          - 5432:5432
+        options: >-
+          --health-cmd "pg_isready -U postgres -d poc_test"
+          --health-interval 5s
+          --health-timeout 5s
+          --health-retries 10
+    env:
+      DATABASE_URL: postgresql://pc_ci_web:ci-only-web-password@127.0.0.1:5432/poc_test
+      PREVIEW_ACCESS_TOKEN: ci-only-preview-token-at-least-32-characters-never-use-production
+      POC_HTTP_BASE: http://127.0.0.1:3100
+      NEXT_TELEMETRY_DISABLED: '1'
+    steps:
+      - name: Checkout isolated owner-preview application
+        uses: actions/checkout@v4
+      - name: Set up Node.js 22
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Create private legacy data and owner-preview projections
+        run: |
+          docker run --rm --network host -e PGPASSWORD=ci-only-postgres-password -v "$GITHUB_WORKSPACE":/work:ro postgres:17 psql -h 127.0.0.1 -U postgres -d poc_test -v ON_ERROR_STOP=1 -f /work/poc/sql/postgres/001_legacy_evidence.sql -f /work/poc/sql/postgres/002_import_legacy.sql -f /work/poc/sql/postgres/003_verify.sql -f /work/poc/sql/postgres/004_owner_preview_security.sql -f /work/poc/sql/postgres/005_seed_owner_preview.sql -f /work/poc/sql/postgres/006_verify_owner_preview.sql
+      - name: Create read-only CI login and test its real grants
+        run: |
+          docker run --rm --network host -e PGPASSWORD=ci-only-postgres-password postgres:17 psql -h 127.0.0.1 -U postgres -d poc_test -v ON_ERROR_STOP=1 -c "CREATE ROLE pc_ci_web LOGIN IN ROLE pc_preview_reader PASSWORD 'ci-only-web-password';"
+          test "$(docker run --rm --network host -e PGPASSWORD=ci-only-web-password postgres:17 psql -h 127.0.0.1 -U pc_ci_web -d poc_test -tAc 'SELECT count(*) FROM pc_preview.substances' | tr -d '[:space:]')" = "84"
+      - name: Install isolated Next.js dependencies
+        run: npm install --prefix apps/web --no-audit --no-fund
+      - name: Check TypeScript and create production build
+        run: |
+          npm run build --prefix apps/web
+          npm run typecheck --prefix apps/web
+      - name: Test real Next.js owner-preview API through read-only DB identity
+        shell: bash
+        run: |
+          set -euo pipefail
+          npm run start --prefix apps/web -- -p 3100 > /tmp/pc-owner-preview.log 2>&1 &
+          APP_PID=$!
+          trap 'kill "$APP_PID" 2>/dev/null || true; tail -n 120 /tmp/pc-owner-preview.log' EXIT
+          for i in $(seq 1 45); do
+            if curl --max-time 2 -fsS http://127.0.0.1:3100/ > /dev/null; then break; fi
+            sleep 1
+          done
+          node --test poc/tests/owner-preview-http.test.mjs
+# No Supabase project created; credentials in this workflow are disposable CI-only fixtures.
+# Passing these tests does not certify product claims, production authorization or G7 release.
