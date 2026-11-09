@@ -1,6 +1,6 @@
 # SEC-001 | Hosting, Authorization, Data Protection and Threat Model
 
-**Status:** G3 PROPOSED, not implemented, pen-tested or approved.  
+**Status:** G3 PROPOSED, not implemented, pen-tested or approved.\
 **Parent:** [ARCH-001](ARCH-001_G3_BLUEPRINT_v0.1.md); [QA-013 tests](QA-013_ARCHITECTURE_ACCEPTANCE_TESTS_v0.1.md). Security is a G6/G7 condition, not a document checkbox.
 
 ## 1. Candidate deployment topology
