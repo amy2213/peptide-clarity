@@ -50,7 +50,7 @@ erDiagram
 
 | Schema / table | Key fields / cardinality | Important integrity requirements |
 |---|---|---|
-| `catalog.substances` | `id`, `legacy_id UNIQUE`, `name`, `kind`, `legacy_group_raw`, `summary_draft`, `status` | Kind permits peptide, related non-peptide, protein, blend/marketing term, unknown; no compound-level FDA approval assertion |
+| `catalog.substances` | `id`, `legacy_id UNIQUE`,  `name`, `kind`, `legacy_group_raw`, `legacy_category_raw`, `legacy_category_type_raw`, `status` | Kind permits peptide, related non-peptide, protein, blend/marketing term, unknown; no compound-level FDA approval assertion |
 | `catalog.substance_aliases` | `id`, `substance_id FK`, `value`, `alias_kind`, `source_id?` | Classify product-brand names, codes and marketing names; preserve raw aliases; no uncontrolled synonym equivalence |
 | `catalog.organizations` | `id`, `legacy_id?`, `display_name`, `domain?`, `identity_review_status` | No “licensed” inference from website existence |
 | `evidence.organization_observations` | `id`, `organization_id FK`, `legacy_company_id`, `ordinal`, `field_label`, `reported_value_raw`, `note_raw?`, `source_url?` | Preserve the company fields tuple verbatim; company-published value ≠ verified legal, licensing or commerce fact |
@@ -62,12 +62,12 @@ erDiagram
 | `regulatory.pharmacy_licenses` | `id`, `organization_id FK`, `jurisdiction`, `license_id?`, `state`, `verified_at?`, `source_id?` | Status and dates required for 'verified'; expired/unknown not rendered active |
 | `regulatory.access_observations` | `id`, `product_id FK`, `organization_id FK`, `jurisdiction`, `rx_required`, `observed_at`, `source_id` | Legal access information, not fulfillment or bypass; eligibility must be reviewed |
 | `regulatory.price_observations` | `id`, `product_id FK`, `organization_id FK`, `amount`, `currency`, `quantity`, `unit`, `observed_at`, `source_id` | Nonnegative amount, explicit units/currency/date; optional insurance/coupon qualifiers |
-| `evidence.sources` | `id`, `legacy_id UNIQUE`, `title`, `publisher`, `url`, `published_raw`, `published_at?`, `observed_at?`, `trust_type`, `review_status` | 41 legacy records preserved verbatim and classified, publisher name is not proof of issuer authenticity |
-| `evidence.claims` | `id`, `legacy_id UNIQUE`, `substance_id FK`, `claim_type`, `text`, `evidence_kind?`, `review_status` | No automatic promotion of desk review to expert approval; revisions tracked |
+| `evidence.sources` | `id`, `legacy_id UNIQUE`, `title`, `publisher_raw`, `kind_raw`, `url`, `published_raw`, `published_at?`, `observed_at?`, `summary_draft?`, `assessment_draft?`, `trust_type`, `review_status` | 41 legacy records preserved verbatim and classified, publisher name is not proof of issuer authenticity |
+| `evidence.claims` | `id`, `legacy_id UNIQUE`, `substance_id FK`, `claim_type`, `title`, `text`, `meaning_raw?`, `evidence_kind?`, `review_raw`, `review_status` | No automatic promotion of desk review to expert approval; revisions tracked |
 | `evidence.claim_sources` | `claim_id FK`, `source_id FK`, `citation_context?` | Both FK targets exist; many-to-many, claim-to-document provenance |
 | `evidence.source_documents` | `id`, `source_id FK`, `object_key?`, `source_url`, `sha256?`, `observed_at`, `access_scope` | Object storage key is private for restricted artifacts; source may be URL-only |
 | `evidence.reported_lots` | `id`, `organization_id FK`, `product_id?`, `reported_lot_code`, `identity_status` | A normalized grouping is **not** verified physical lot identity; potential duplicate held for review |
-| `evidence.lot_substance_observations` | `id`, `reported_lot_id FK`, `substance_id FK`, `legacy_row_id UNIQUE`, `observed_at?`, `source_id` | Preserve **all 15** legacy associations, including two pointing to Polaris GLOW code |
+| `evidence.lot_substance_observations` | `id`, `reported_lot_id FK`, `substance_id FK`, `legacy_row_id UNIQUE`, `observed_at?`, `source_id`, `issuer_authenticated_raw`, `custody_verified_raw` | Preserve **all 15** legacy associations, including two pointing to Polaris GLOW code |
 | `evidence.lab_reports` | `id`, `reported_lot_id FK`, `issuer_organization_id?`, `source_id?`, `document_id?`, `issuer_authenticated`, `custody_verified`, `method_review` | Distinct false vs not checked; no report means no invented report row; issuer named ≠ authenticated |
 | `evidence.analytical_observations` | `id`, `lot_association_id FK`, `reported_metric`, `result_num?`, `result_text_raw?`, `unit?`, `source_id?`, `evidence_level_raw?`, `report_id?` | Seller-reported purity/assay/testing fields are not lab authentication; valid even with **no** inspected PDF/report |
 | `evidence.lab_measurements` | `id`, `lab_report_id FK`, `analyte`, `result_num?`, `result_text?`, `unit?`, `method?`, `interpretation_status` | Numerical value only if represented as reported, with units and method; do not convert/mislabel reported purity as safety |
