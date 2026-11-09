@@ -44,12 +44,21 @@
 - [REQ-014 · Beginner-first discovery (#11)](https://github.com/amy2213/peptide-clarity/issues/11)
 - [QA-012 · Real device, expert and live validation (#12)](https://github.com/amy2213/peptide-clarity/issues/12)
 - [OPS-001 · Enforce required checks and branch protection (#13)](https://github.com/amy2213/peptide-clarity/issues/13)
+- [G2-EVID-001 · Regulatory and owner testing evidence (#24)](https://github.com/amy2213/peptide-clarity/issues/24)
+- [G3-SEC-001 · Secure preview roles and RLS (#22)](https://github.com/amy2213/peptide-clarity/issues/22)
+- [APP-001 · Next.js protected read API (#23)](https://github.com/amy2213/peptide-clarity/issues/23)
 
 
 ### G3 architecture design (proposed, not approved)
 
 - [ARCH-001 G3 architecture review package](architecture/README.md) details the data model, module/repository structure, security/hosting, migration crosswalk and QA-013 test cases. Owner approved PDP product scope in DEC-005, but G2 evidence validation and G3 architecture gate have not passed.
 - [ARCH-001 Issue #16](https://github.com/amy2213/peptide-clarity/issues/16) tracks design review and implementation dependencies.
+
+### Current G2 and G3 implementation evidence
+
+- [G2 preliminary research and owner-testing protocol](G2_EVIDENCE_AND_OWNER_TEST_PACKET_v0.1.md): FDA source ledger and comparative review; N=1 tasks and qualified reviews still open.
+- [G3 security and staging application runbook](G3_STAGING_SECURITY_AND_APP_SLICE_v0.1.md): isolated PostgreSQL role checks and Next.js protected owner API. Not hosted or product-certified.
+- [Draft PR #25](https://github.com/amy2213/peptide-clarity/pull/25): no published `index.html` change or production database creation. CI passing does not authorize G3/G7.
 
 ## Baseline review snapshot
 
