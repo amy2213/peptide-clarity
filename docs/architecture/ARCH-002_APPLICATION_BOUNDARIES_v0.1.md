@@ -1,6 +1,6 @@
 # ARCH-002 | Repository Layout, Module Boundaries and API Contracts
 
-**Status:** Proposed G3 application structure, not a working application or adopted framework.  
+**Status:** Proposed G3 application structure, not a working application or adopted framework.\
 **Parent:** [ARCH-001](ARCH-001_G3_BLUEPRINT_v0.1.md). Keep `main/index.html` intact for legacy rollback until explicitly superseded.
 
 ## 1. Proposed structure (future implementation branch only)
