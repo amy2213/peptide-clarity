@@ -1,7 +1,7 @@
 # ARCH-001 | Peptide Clarity G3 Architecture Blueprint
-**Version:** 0.1 (2026-11-08)  
-**Status:** PROVISIONAL / FOR OWNER REVIEW. G3 **NOT PASSED**. Not an implementation, procurement, hosting, or public-launch authorization.  
-**Parent controls:** GOV-001 (approved), PDP-001 v0.2 working + proposed v0.3 scope addendum (not PDP v1.0 approved), DEC-001/002 owner-led exception, DEC-004 bounded owner-testing preview.  
+**Version:** 0.1 (2026-11-08)\
+**Status:** PROVISIONAL / FOR OWNER REVIEW. G3 **NOT PASSED**. Not an implementation, procurement, hosting, or public-launch authorization.\
+**Parent controls:** GOV-001 (approved), PDP-001 v0.2 working + proposed v0.3 scope addendum (not PDP v1.0 approved), DEC-001/002 owner-led exception, DEC-004 bounded owner-testing preview.\
 **Change tracking:** [ARCH-001 issue #16](https://github.com/amy2213/peptide-clarity/issues/16), [REQ-010 #7](https://github.com/amy2213/peptide-clarity/issues/7), [REQ-011 #8](https://github.com/amy2213/peptide-clarity/issues/8), [REQ-012 #9](https://github.com/amy2213/peptide-clarity/issues/9), [REQ-013 #10](https://github.com/amy2213/peptide-clarity/issues/10), [REQ-014 #11](https://github.com/amy2213/peptide-clarity/issues/11).
 
 > A G3 candidate can be designed before G2 is passed under bounded owner-led exploration. It cannot be locked, promoted to Ready to Build, or treated as G3-complete while the G2 product scope and required validation are outstanding.
