@@ -1,6 +1,6 @@
 # QA-013 | G3 Architecture Acceptance and Negative Test Specifications
 
-**Version:** 0.1 | **Status:** TEST PLAN ONLY, NOT EXECUTED.  
+**Version:** 0.1 | **Status:** TEST PLAN ONLY, NOT EXECUTED.\
 **Related:** [ARCH-001](ARCH-001_G3_BLUEPRINT_v0.1.md), [DATA-006](DATA-006_LOGICAL_ERD_v0.1.md), [DATA-007](DATA-007_LEGACY_MIGRATION_CROSSWALK_v0.1.md), [SEC-001](SEC-001_HOSTING_SECURITY_THREAT_MODEL_v0.1.md).
 
 Do **not** report any tests below as passed merely because this document exists. Execution needs artifact link, code/schema version, environment, reviewer, UTC test timestamp, expected/actual, defect ID and retest result. Record a blocking non-result as `NOT RUN` or `NOT VERIFIED`, never `PASS`.
