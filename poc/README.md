@@ -7,7 +7,7 @@
 ## Inputs and expected values
 
 - Frozen fixture: `fixtures/researchData.v091.json`, copied from the public `main/index.html` `researchData` script. Baseline source blob SHA `75ea4702085753adb1287844cd86d8e69f0e40aa`.
-- 84 substances, 104 aliases, 41 sources, 37 claims, 5 research companies, 45 company-field tuples, 15 reported lot-substance association rows, 14 provisional seller/lot groups, 5 unresolved evidence issues.
+- 84 substances, 104 aliases, 41 sources, 37 claims, 5 research companies, 45 company-field tuples, 15 reported lot-substance association rows, 14 provisional seller/lot groups, 5 evidence issues (three Unresolved, one Not assessable, one Not inspected).
 - No product-specific FDA approval, authenticated laboratory finding, legal pharmacy license, review event or purchasing endorsement is created from the legacy `approved` category text.
 
 ## Verification paths
@@ -18,7 +18,7 @@ node --experimental-sqlite --test poc/tests/legacy-store.test.mjs
 ```
 These exercise foreign keys, idempotency, source traceability, company-lot grouping, unknown states, prohibited inferred approvals, and synthetic approval/licensing constraints in an in-memory SQLite database. **They do not constitute PostgreSQL execution or full Supabase security testing.**
 
-**PostgreSQL schema:** `sql/postgres/001_legacy_evidence.sql` is a candidate, isolated `poc` schema with explicit FKs, product-type constraints and RLS enabled. A dedicated disposable PostgreSQL test must independently execute and validate the migration before we call the target database proven.
+**PostgreSQL 17 CI validation:** `sql/postgres/001_legacy_evidence.sql`, `002_import_legacy.sql`, and `003_verify.sql` execute against a disposable PostgreSQL service in `.github/workflows/poc-relational.yml`. The complete source JSON was imported and database counts, issue statuses, lot associations, product-type constraints, and RLS were checked successfully in relational POC run #6. This verifies the bounded spike, **not** production Supabase permissions, independently verified scientific data, or final migration readiness.
 
 ## Data correctness caveats
 
