@@ -101,7 +101,7 @@ test('M16: unresolved evidence issues remain unresolved after import',()=>{
   const {db}=seeded();
   const rows=db.prepare('SELECT id,status FROM evidence_issues ORDER BY id').all();
   assert.equal(rows.length,5);
-  assert.ok(rows.every(x=>x.status==='Unresolved'));
+  assert.deepEqual(rows.map(x=>[x.id,x.status]), original.issues.map(x=>[x.id,x.status]).sort((a,b)=>a[0].localeCompare(b[0])));
 });
 
 test('M15: preserve original metadata, validation and source-provided declared counts',()=>{
