@@ -1,7 +1,7 @@
 # DATA-007 | Lossless Legacy Data Migration, Crosswalk and Rollback
 
-**Status:** PROPOSED G3 plan, not a completed migration.  
-**Parent:** [ARCH-001](ARCH-001_G3_BLUEPRINT_v0.1.md) · [DATA-006 ERD](DATA-006_LOGICAL_ERD_v0.1.md) · [QA-013 test matrix](QA-013_ARCHITECTURE_ACCEPTANCE_TESTS_v0.1.md)  
+**Status:** PROPOSED G3 plan, not a completed migration.\
+**Parent:** [ARCH-001](ARCH-001_G3_BLUEPRINT_v0.1.md) · [DATA-006 ERD](DATA-006_LOGICAL_ERD_v0.1.md) · [QA-013 test matrix](QA-013_ARCHITECTURE_ACCEPTANCE_TESTS_v0.1.md)\
 **Baseline:** Root `index.html` SHA recorded by GitHub at inspection, v0.9.1 published owner-testing prototype. Do not edit source JSON as part of extraction.
 
 ## 1. Invariants and exact inventory
