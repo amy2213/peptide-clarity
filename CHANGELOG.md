@@ -2,6 +2,14 @@
 
 The entries here summarize **repository changes**, not independently verified medical information or formal public-product launch approval. See [controlled release history](docs/RELEASE_HISTORY.md) and [development control center](docs/CONTROL_CENTER.md).
 
+## 2026-11-08 | G3-SEC-001 / APP-001 · Isolated secure staging architecture
+
+- Added protected `pc_preview` PostgreSQL projections, restricted reader/visitor/ingestion roles, explicit RLS and role-negative tests.
+- Added standalone Next.js owner-preview shell and five protected, read-only server API endpoints for substance, claim, company and lot research.
+- Added CI disposable PostgreSQL security and HTTP API test workflow; **no hosted Peptide Clarity database and no public deployment**.
+- Added [preliminary G2 evidence and comprehension protocol](docs/G2_EVIDENCE_AND_OWNER_TEST_PACKET_v0.1.md) with FDA source links and owner-led N=1 tasks. Qualified reviews and G2 gate evidence still outstanding.
+- Existing GitHub Pages `index.html` unchanged. G3/G7 gates remain unapproved.
+
 ## 2026-11-08 | DEC-005 · PDP v1.0 product scope approved
 
 - Owner approved the three-pathway product scope and prioritized MVP documented in [PDP-001 v1.0](docs/PDP-001_v1.0_APPROVED_2026-11-08.md), with separate [DEC-005](docs/DEC-005_PDP001_V1_SCOPE_APPROVAL_2026-11-08.md) decision.
