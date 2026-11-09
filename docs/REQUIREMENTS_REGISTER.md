@@ -1,14 +1,14 @@
 # Peptide Clarity | Requirements Register
 
-**Status:** PROVISIONAL. The authoritative PDP-001 v1.0 has **not** been approved.
+**Status:** PDP-001 v1.0 **PRODUCT SCOPE OWNER APPROVED** in [DEC-005](DEC-005_PDP001_V1_SCOPE_APPROVAL_2026-11-08.md). G2 evidence validation and per-feature GOV-001 F-001 approvals remain outstanding; no G3 or G7 approval.
 
 | ID | Candidate requirement | Class | Status | Tracking |
 |---|---|---|---|---|
-| REQ-010 | Update PDP to explicitly separate approved medicines, compounded drugs, and research-only company evidence | Product definition | Draft; G2 pending | [#7](https://github.com/amy2213/peptide-clarity/issues/7) |
-| REQ-011 | Show product-specific FDA approval and verified licensed-pharmacy prescription access information | Product feature | Proposed | [#8](https://github.com/amy2213/peptide-clarity/issues/8) |
+| REQ-010 | Update PDP to explicitly separate approved medicines, compounded drugs, and research-only company evidence | Product definition | **Scope approved DEC-005; G2 validation open** | [#7](https://github.com/amy2213/peptide-clarity/issues/7) |
+| REQ-011 | Show product-specific FDA approval and verified licensed-pharmacy prescription access information | Product feature | In approved MVP scope; F-001/build gate pending | [#8](https://github.com/amy2213/peptide-clarity/issues/8) |
 | REQ-012 | Separate compounded-medication status and risk disclosures from FDA-approved products | Product feature | Proposed | [#9](https://github.com/amy2213/peptide-clarity/issues/9) |
 | REQ-013 | Compare public research-company/COA evidence without unverified safety ratings or human-use referrals | Product feature | Proposed | [#10](https://github.com/amy2213/peptide-clarity/issues/10) |
-| REQ-014 | Clear full substance library, accessible search, beginner-first profiles and company discovery | UX | Proposed | [#11](https://github.com/amy2213/peptide-clarity/issues/11) |
+| REQ-014 | Clear full substance library, accessible search, beginner-first profiles and company discovery | UX | In approved MVP scope; F-001/build gate pending | [#11](https://github.com/amy2213/peptide-clarity/issues/11) |
 | ARCH-001 | Design three-layer modular architecture, relational evidence schema, private/published access and migration/rollback | Architecture G3 | Draft for owner review, G3 not passed | [#16](https://github.com/amy2213/peptide-clarity/issues/16) |
 | QA-012 | Validate iPhone, accessibility, live hosting, expert sources and supplier provenance | Verification | Open | [#12](https://github.com/amy2213/peptide-clarity/issues/12) |
 | OPS-001 | Enforce review and CI checks in repository settings | Operations | Open | [#13](https://github.com/amy2213/peptide-clarity/issues/13) |
