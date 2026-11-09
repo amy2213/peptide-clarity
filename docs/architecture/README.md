@@ -2,7 +2,7 @@
 
 **Prepared:** 2026-11-08\
 **Package status:** **DRAFT FOR REVIEW. NOT G3 APPROVED OR IMPLEMENTED.**\
-**Tracked in:** [ARCH-001 GitHub Issue #16](https://github.com/amy2213/peptide-clarity/issues/16). Parent controls GOV-001 / PDP-001 working / DEC-002.
+**Tracked in:** [ARCH-001 GitHub Issue #16](https://github.com/amy2213/peptide-clarity/issues/16). Parent controls GOV-001 / PDP-001 v1.0 owner-approved **product scope** under DEC-005 (remaining G2 validation open) / DEC-002.
 
 ## Review order
 
@@ -21,7 +21,7 @@ Verified import inventory in source: 84 indexed names, 104 aliases, 37 claims, 4
 
 ## Review decisions needed
 
-- [ ] Confirm revised PDP v1.0 requirements/scope with separate approved medicine, compounded drug and research-company evidence pathways (G2 outstanding).
+- [x] Owner approved PDP v1.0 product scope and the three separate pathways (DEC-005); remaining G2 evidence validation is outstanding.
 - [ ] Evaluate Next.js modular monolith against Astro and a static export bridge with a small spike.
 - [ ] Approve relational schema and importer reconciliation strategy; protect publication and unknown states.
 - [ ] Define evidence-review authority, price/licensing data freshness and document custody standards.

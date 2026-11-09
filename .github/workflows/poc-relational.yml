@@ -1,0 +1,52 @@
+name: Peptide Clarity relational POC QA
+on:
+  pull_request:
+    paths:
+      - 'poc/**'
+      - '.github/workflows/poc-relational.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  relational-poc:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Check out POC files
+        uses: actions/checkout@v4
+      - name: Set up Node.js 22
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Check test harness syntax
+        run: |
+          node --check poc/src/legacy-store.mjs
+          node --check poc/tests/legacy-store.test.mjs
+      - name: Run isolated SQLite relational and provenance tests
+        run: node --experimental-sqlite --test poc/tests/legacy-store.test.mjs
+
+  postgres-poc:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    services:
+      postgres:
+        image: postgres:17
+        env:
+          POSTGRES_PASSWORD: only-for-ci
+          POSTGRES_DB: poc_test
+        ports:
+          - 5432:5432
+        options: >-
+          --health-cmd "pg_isready -U postgres -d poc_test"
+          --health-interval 5s
+          --health-timeout 5s
+          --health-retries 10
+    steps:
+      - name: Check out evidence fixture and SQL
+        uses: actions/checkout@v4
+      - name: Execute schema, full JSON import and database assertions
+        run: |
+          docker run --rm --network host -e PGPASSWORD=only-for-ci -v "$GITHUB_WORKSPACE":/work:ro postgres:17 psql -h 127.0.0.1 -U postgres -d poc_test -v ON_ERROR_STOP=1 -f /work/poc/sql/postgres/001_legacy_evidence.sql -f /work/poc/sql/postgres/002_import_legacy.sql -f /work/poc/sql/postgres/003_verify.sql
+# Never use connected CareerOS or production Supabase for this disposable test job.

@@ -7,7 +7,7 @@
 ## Source of truth and priority
 
 1. **GOV-001 | MASTER_BUILD_STANDARD_v1.0.md** (APPROVED, 2026-10-24). Authoritative original in the project Library at `/Research Transparency Platform/`; this index does not supersede or silently amend it.
-2. **PDP-001 | Product Definition Package v0.2** (WORKING, not PDP v1.0 approved), original in that same Library folder. Proposed v0.3 additions: [working scope addendum](PRODUCT_SCOPE_PDP-001_v0.3_WORKING.md).
+2. **[PDP-001 v1.0 | Product Definition](PDP-001_v1.0_APPROVED_2026-11-08.md)**: **owner-approved product scope and prioritized MVP** under [DEC-005](DEC-005_PDP001_V1_SCOPE_APPROVAL_2026-11-08.md); **G2 evidence validation remains open**. Supersedes Library v0.2 working definition and [v0.3 working addendum](PRODUCT_SCOPE_PDP-001_v0.3_WORKING.md) for product-scope decisions, without superseding GOV-001 or DEC-002.
 3. **[Decision and exception register](DECISION_REGISTER.md):** DEC-001 solo-build exception; DEC-002 external interviews deferred/owner-led evaluation; DEC-003 earlier public owner preview; [DEC-004](DEC-004_V091_OWNER_PREVIEW_RELEASE.md) v0.9.1 prototype promotion. Library originals control where the repo lacks a copy.
 4. **Specifications and records:** [requirements](REQUIREMENTS_REGISTER.md), [changes](CHANGE_REGISTER.md), [assumptions and open risks](ASSUMPTIONS_AND_RISKS.md), [engineering rules](ENGINEERING_STANDARDS.md), QA evidence, source and lot research records.
 5. **Executable source and versions:** GitHub commits/branches/PRs, [CHANGELOG](../CHANGELOG.md), [release history](RELEASE_HISTORY.md) and [release checklist](RELEASE_CHECKLIST.md).
@@ -48,7 +48,7 @@
 
 ### G3 architecture design (proposed, not approved)
 
-- [ARCH-001 G3 architecture review package](architecture/README.md) details the data model, module/repository structure, security/hosting, migration crosswalk and QA-013 test cases. Owner review outstanding; no G2/G3 gate pass inferred.
+- [ARCH-001 G3 architecture review package](architecture/README.md) details the data model, module/repository structure, security/hosting, migration crosswalk and QA-013 test cases. Owner approved PDP product scope in DEC-005, but G2 evidence validation and G3 architecture gate have not passed.
 - [ARCH-001 Issue #16](https://github.com/amy2213/peptide-clarity/issues/16) tracks design review and implementation dependencies.
 
 ## Baseline review snapshot
