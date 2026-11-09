@@ -13,6 +13,11 @@
 5. [DATA-007 | Source-to-Target Migration](DATA-007_LEGACY_MIGRATION_CROSSWALK_v0.1.md): field-level mapping from existing JSON, expected counts, ambiguities, idempotency and rollback.
 6. [QA-013 | Acceptance and Negative Tests](QA-013_ARCHITECTURE_ACCEPTANCE_TESTS_v0.1.md): preconditions, action and exact expected result for preservation, data integrity, access control, content integrity, mobile UX and release recovery.
 
+## Implementation evidence (bounded owner-only preview)
+
+- [G3-SEC-001 and APP-001 security/application runbook](../G3_STAGING_SECURITY_AND_APP_SLICE_v0.1.md) describes an isolated PostgreSQL + Next.js read API slice, under [PR #25](https://github.com/amy2213/peptide-clarity/pull/25). This does **not** constitute G3 gate approval or an actual hosted Supabase deployment.
+- [G2-EVID-001 source and owner-task packet](../G2_EVIDENCE_AND_OWNER_TEST_PACKET_v0.1.md) documents desk research; N=1 user observations and qualified review are still pending.
+
 ## Existing baseline
 
 Current main site is v0.9.1 publicly accessible **owner-testing prototype**, not final G7 public medical-information product. The user-facing website and embedded data have **not been modified** by this architecture package.

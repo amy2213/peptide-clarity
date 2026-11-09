@@ -10,6 +10,9 @@
 | REQ-013 | Compare public research-company/COA evidence without unverified safety ratings or human-use referrals | Product feature | Proposed | [#10](https://github.com/amy2213/peptide-clarity/issues/10) |
 | REQ-014 | Clear full substance library, accessible search, beginner-first profiles and company discovery | UX | In approved MVP scope; F-001/build gate pending | [#11](https://github.com/amy2213/peptide-clarity/issues/11) |
 | ARCH-001 | Design three-layer modular architecture, relational evidence schema, private/published access and migration/rollback | Architecture G3 | Draft for owner review, G3 not passed | [#16](https://github.com/amy2213/peptide-clarity/issues/16) |
+| G3-SEC-001 | Separate private raw research and owner-only staged projections with real Postgres roles and RLS | G3 validation | Isolated implementation tested; hosted environment not created | [#22](https://github.com/amy2213/peptide-clarity/issues/22) |
+| APP-001 | Build minimal Next.js protected read-only substance/company evidence API | G3 application spike | Build and CI API tests demonstrated; no public deployment | [#23](https://github.com/amy2213/peptide-clarity/issues/23) |
+| G2-EVID-001 | Regulatory/competitor desk audit and owner-led N=1 comprehension protocol | G2 validation | Preliminary desk evidence; actual owner tasks and expert review open | [#24](https://github.com/amy2213/peptide-clarity/issues/24) |
 | QA-012 | Validate iPhone, accessibility, live hosting, expert sources and supplier provenance | Verification | Open | [#12](https://github.com/amy2213/peptide-clarity/issues/12) |
 | OPS-001 | Enforce review and CI checks in repository settings | Operations | Open | [#13](https://github.com/amy2213/peptide-clarity/issues/13) |
 

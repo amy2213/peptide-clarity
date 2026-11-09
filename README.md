@@ -15,6 +15,7 @@ The [Development Control Center](docs/CONTROL_CENTER.md) indexes project rules, 
 - [Engineering standards](docs/ENGINEERING_STANDARDS.md) · [Contributor workflow](CONTRIBUTING.md) · [Release checklist](docs/RELEASE_CHECKLIST.md)
 - [Owner-approved PDP-001 v1.0 product scope](docs/PDP-001_v1.0_APPROVED_2026-11-08.md) and [DEC-005 decision](docs/DEC-005_PDP001_V1_SCOPE_APPROVAL_2026-11-08.md): FDA-approved medicine access, compounded medications and research supplier evidence are **distinct**. G2 evidence validation and G7 public release remain open.
 - [POC-001 database test harness](poc/README.md): isolated SQLite + PostgreSQL feasibility checks; no production database or site changes.
+- [G3 secure owner-preview API spike](docs/G3_STAGING_SECURITY_AND_APP_SLICE_v0.1.md) and [G2 evidence packet](docs/G2_EVIDENCE_AND_OWNER_TEST_PACKET_v0.1.md). Both are controlled internal work; G2 validation, G3 acceptance and G7 launch remain open.
 - [CHG-001 bootstrap](https://github.com/amy2213/peptide-clarity/issues/6) · [OPS-001 CI/branch protection follow-up](https://github.com/amy2213/peptide-clarity/issues/13)
 
 A dependency-free structural validator is at `scripts/validate-repo.mjs` and GitHub Actions configuration at `.github/workflows/validate.yml`. A passing structural check is **not** a substitute for source validation, expert review, accessibility certification, legal review or G7 release approval.
