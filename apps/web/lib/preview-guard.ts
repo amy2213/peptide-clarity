@@ -25,7 +25,9 @@ export async function withOwnerPreview(
     return previewError("unauthorized", 401);
   }
   try {
-    return NextResponse.json(await handler(), { status: 200, headers });
+    const result = await handler();
+    if (result instanceof NextResponse) return result;
+    return NextResponse.json(result, { status: 200, headers });
   } catch {
     // No raw SQL, patient information, tokens, or supplier data in errors.
     console.error("owner_preview_data_request_failed");
