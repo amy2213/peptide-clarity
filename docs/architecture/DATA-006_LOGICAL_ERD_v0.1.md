@@ -1,6 +1,6 @@
 # DATA-006 | Logical Data Model, ERD and Constraints
 
-**Status:** G3 proposed schema, not a live database schema or executed migration.  
+**Status:** G3 proposed schema, not a live database schema or executed migration.\
 **Parent:** [ARCH-001](ARCH-001_G3_BLUEPRINT_v0.1.md). All new entities remain provisional until PDP/G3 approval.
 
 ## 1. ERD: research, regulatory, supplier and publication
