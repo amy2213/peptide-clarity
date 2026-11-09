@@ -8,7 +8,9 @@ CREATE TABLE IF NOT EXISTS poc.snapshots (
   id text PRIMARY KEY,
   meta_json jsonb NOT NULL,
   validation_json jsonb NOT NULL,
-  record_counts_json jsonb NOT NULL
+  record_counts_json jsonb NOT NULL,
+  original_raw_text text NOT NULL,
+  original_sha256 text NOT NULL
 );
 
 CREATE TABLE IF NOT EXISTS poc.source_records (
