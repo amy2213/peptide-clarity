@@ -45,6 +45,12 @@
 - [QA-012 · Real device, expert and live validation (#12)](https://github.com/amy2213/peptide-clarity/issues/12)
 - [OPS-001 · Enforce required checks and branch protection (#13)](https://github.com/amy2213/peptide-clarity/issues/13)
 
+
+### G3 architecture design (proposed, not approved)
+
+- [ARCH-001 G3 architecture review package](architecture/README.md) details the data model, module/repository structure, security/hosting, migration crosswalk and QA-013 test cases. Owner review outstanding; no G2/G3 gate pass inferred.
+- [ARCH-001 Issue #16](https://github.com/amy2213/peptide-clarity/issues/16) tracks design review and implementation dependencies.
+
 ## Baseline review snapshot
 
 - Current `index.html` is an embedded-data static prototype: 84 indexed names, 13 preliminary source-linked profiles, 41 source records, five supplier dossiers and 15 lot associations.
