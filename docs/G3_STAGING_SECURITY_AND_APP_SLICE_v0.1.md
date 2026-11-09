@@ -1,8 +1,8 @@
 # G3-SEC-001 / APP-001 | Isolated Staging Proof, Runbook and Decision Boundaries
 
-**Prepared:** 2026-11-08 | **Status:** OWNER-TESTING IMPLEMENTATION SPIKE; G3 **NOT PASSED**, G7 **NOT APPROVED**  
-**Pull request:** [#25](https://github.com/amy2213/peptide-clarity/pull/25)  
-**Requirements:** [G3-SEC-001 issue #22](https://github.com/amy2213/peptide-clarity/issues/22), [APP-001 issue #23](https://github.com/amy2213/peptide-clarity/issues/23).  
+**Prepared:** 2026-11-08 | **Status:** OWNER-TESTING IMPLEMENTATION SPIKE; G3 **NOT PASSED**, G7 **NOT APPROVED**\
+**Pull request:** [#25](https://github.com/amy2213/peptide-clarity/pull/25)\
+**Requirements:** [G3-SEC-001 issue #22](https://github.com/amy2213/peptide-clarity/issues/22), [APP-001 issue #23](https://github.com/amy2213/peptide-clarity/issues/23).\
 **Product scope:** PDP-001 v1.0 owner-approved; G2 evidence validation still open.
 
 ## 1. What is implemented
