@@ -50,4 +50,3 @@ jobs:
         run: |
           docker run --rm --network host -e PGPASSWORD=only-for-ci -v "$GITHUB_WORKSPACE":/work:ro postgres:17 psql -h 127.0.0.1 -U postgres -d poc_test -v ON_ERROR_STOP=1 -f /work/poc/sql/postgres/001_legacy_evidence.sql -f /work/poc/sql/postgres/002_import_legacy.sql -f /work/poc/sql/postgres/003_verify.sql
 # Never use connected CareerOS or production Supabase for this disposable test job.
-
