@@ -63,7 +63,7 @@ flowchart LR
 - Run POC original schema and importer in order: \`001_legacy_evidence.sql\`, \`002_import_legacy.sql\`, \`003_verify.sql\`.
 - Run new permissions and snapshot scripts: \`004_owner_preview_security.sql\`, \`005_seed_owner_preview.sql\`, \`006_verify_owner_preview.sql\`.
 - Create a **dedicated** read-only login role, inheriting \`pc_preview_reader\`, with a unique local secret; never use a superuser or Supabase service key in \`DATABASE_URL\`.
-- In \`apps/web\`, install dependencies, configure **server-only** \`DATABASE_URL\` and a random \`PREVIEW_ACCESS_TOKEN\`, and run \`npm run build\` / \`npm start\`.
+- In \`apps/web\`, install locked dependencies with `npm ci`, configure **server-only** \`DATABASE_URL\` and a random \`PREVIEW_ACCESS_TOKEN\`, and run \`npm run build\` / \`npm start\`.
 - Run protected HTTP checks under \`poc/tests/owner-preview-http.test.mjs\`.
 - Prefer GitHub Actions for reproducible test execution, as \`.github/workflows/g3-staging.yml\` provisions its own disposable database.
 
@@ -76,7 +76,7 @@ Evidence status must be updated from the actual workflow conclusion and logs. As
 Open:
 - No dedicated Peptide Clarity hosted Supabase project or Vercel deployment created.
 - No production role provisioning, MFA/identity management, approval workflow, authenticated editorial dashboard, public API, file upload handling, secrets rotation, backup restore or user-data privacy assessment completed.
-- No package lockfile yet at initial prototype stage; require deterministic dependency installation before any promotion.
+- Dependency versions are pinned by the committed `apps/web/package-lock.json`, and CI uses `npm ci`; this is a reproducible **prototype build**, not a security/vulnerability audit or release approval.
 - No current FDA product-specific approval record or actual pharmacy license imported into public database.
 - No expert scientific, legal, analytical, WCAG 2.2 AA or real-device review completed.
 - The full QA-013 60-case G3/G6 evidence matrix is not passed; passing subset does not imply G3 approval.
