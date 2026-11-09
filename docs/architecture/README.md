@@ -1,7 +1,7 @@
 # G3 Architecture Review Package | Peptide Clarity
 
-**Prepared:** 2026-11-08  
-**Package status:** **DRAFT FOR REVIEW. NOT G3 APPROVED OR IMPLEMENTED.**  
+**Prepared:** 2026-11-08\
+**Package status:** **DRAFT FOR REVIEW. NOT G3 APPROVED OR IMPLEMENTED.**\
 **Tracked in:** [ARCH-001 GitHub Issue #16](https://github.com/amy2213/peptide-clarity/issues/16). Parent controls GOV-001 / PDP-001 working / DEC-002.
 
 ## Review order
