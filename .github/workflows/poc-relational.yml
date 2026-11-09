@@ -1,0 +1,29 @@
+name: Peptide Clarity relational POC QA
+on:
+  pull_request:
+    paths:
+      - 'poc/**'
+      - '.github/workflows/poc-relational.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  relational-poc:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Check out POC files
+        uses: actions/checkout@v4
+      - name: Set up Node.js 22
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Check test harness syntax
+        run: |
+          node --check poc/src/legacy-store.mjs
+          node --check poc/tests/legacy-store.test.mjs
+      - name: Run isolated SQLite relational and provenance tests
+        run: node --experimental-sqlite --test poc/tests/legacy-store.test.mjs
+# This proof-of-concept harness does NOT verify PostgreSQL or production Supabase behavior.
