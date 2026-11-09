@@ -1,7 +1,7 @@
 # G2-EVID-001 | Discovery Evidence and Owner-Led Testing Packet
 
-**Prepared:** 2026-11-08 | **Status:** PARTIAL EVIDENCE / G2 VALIDATION OPEN  
-**Governance:** PDP-001 v1.0 scope approved under DEC-005; GOV-001 G2 evidence gate remains open. DEC-002 permits owner-led N=1 and defers external participant interviews.  
+**Prepared:** 2026-11-08 | **Status:** PARTIAL EVIDENCE / G2 VALIDATION OPEN\
+**Governance:** PDP-001 v1.0 scope approved under DEC-005; GOV-001 G2 evidence gate remains open. DEC-002 permits owner-led N=1 and defers external participant interviews.\
 **Tracking:** [Issue #24](https://github.com/amy2213/peptide-clarity/issues/24) · [G2-VAL-001 #21](https://github.com/amy2213/peptide-clarity/issues/21)
 
 ## 1. Purpose and falsifiable success criteria
