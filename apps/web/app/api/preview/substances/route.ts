@@ -6,7 +6,7 @@ export const dynamic = "force-dynamic";
 export async function GET(req: Request) {
   return withOwnerPreview(req, async () => {
     const page=readPage(req.url), search=readSearch(req.url);
-    if(!page || search===null) return { error:"invalid_query" };
+    if(!page || search===null) return previewError("invalid_query",400);
     return listSubstances(search,page.limit,page.offset);
   });
 }
