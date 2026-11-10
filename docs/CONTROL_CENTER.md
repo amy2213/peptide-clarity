@@ -60,6 +60,12 @@
 - [G3 security and staging application runbook](G3_STAGING_SECURITY_AND_APP_SLICE_v0.1.md): isolated PostgreSQL role checks and Next.js protected owner API. Not hosted or product-certified.
 - [Draft PR #25](https://github.com/amy2213/peptide-clarity/pull/25): no published `index.html` change or production database creation. CI passing does not authorize G3/G7.
 
+### G2 evidence update and hosted staging preparation (2026-11-09)
+
+- [G2-EVID-002 | FDA, Texas pharmacy and competitor desk audit](G2_COMPETITIVE_AND_REGULATORY_AUDIT_2026-11-09.md): sourced, dated research and four-platform capability matrix. Owner usability and qualified review are not complete.
+- [DATA-008 | Five-company supplier evidence reconciliation](DATA-008_LEGACY_SUPPLIER_EVIDENCE_RECONCILIATION_2026-11-09.md): 15 legacy observations, 14 candidate seller/lot groups, one direct PDF/report URL, zero independently authenticated issuers/custody.
+- [OPS-002 | Supabase hosted staging readiness and cost decision](OPS-002_SUPABASE_STAGING_READINESS_v0.1.md): distinct project/permissions and twelve unexecuted hosted acceptance cases. Requires **explicit organization choice** and acceptance of any nonzero quoted cost. Do not touch CareerOS.
+
 ## Baseline review snapshot
 
 - Current `index.html` is an embedded-data static prototype: 84 indexed names, 13 preliminary source-linked profiles, 41 source records, five supplier dossiers and 15 lot associations.

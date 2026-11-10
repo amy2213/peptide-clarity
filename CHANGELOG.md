@@ -2,6 +2,13 @@
 
 The entries here summarize **repository changes**, not independently verified medical information or formal public-product launch approval. See [controlled release history](docs/RELEASE_HISTORY.md) and [development control center](docs/CONTROL_CENTER.md).
 
+## 2026-11-09 | G2-EVID-002 / DATA-008 / OPS-002 · Evidence and hosted staging readiness
+
+- Extended primary FDA/Texas pharmacy source desk audit and assessed four competitor/comparator workflows with specific source/date and uncertainty limitations.
+- Reconciled all five existing research company dossiers: 15 lot-substance observations, 14 provisional seller/lot groups, one direct seller report URL, zero independently authenticated lab issuers/sample custody results.
+- Documented dedicated Supabase staging decision gates, environment isolation and 12 hosted negative/acceptance tests; **no Supabase project created, no billing approved, and no CareerOS change**.
+- Owner-led N=1 usability tasks, final scientific/regulatory/legal review, G2/G3 gates and G7 public launch remain pending.
+
 ## 2026-11-08 | G3-SEC-001 / APP-001 · Isolated secure staging architecture
 
 - Added protected `pc_preview` PostgreSQL projections, restricted reader/visitor/ingestion roles, explicit RLS and role-negative tests.

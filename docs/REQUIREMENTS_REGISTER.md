@@ -13,6 +13,9 @@
 | G3-SEC-001 | Separate private raw research and owner-only staged projections with real Postgres roles and RLS | G3 validation | Isolated implementation tested; hosted environment not created | [#22](https://github.com/amy2213/peptide-clarity/issues/22) |
 | APP-001 | Build minimal Next.js protected read-only substance/company evidence API | G3 application spike | Build and CI API tests demonstrated; no public deployment | [#23](https://github.com/amy2213/peptide-clarity/issues/23) |
 | G2-EVID-001 | Regulatory/competitor desk audit and owner-led N=1 comprehension protocol | G2 validation | Preliminary desk evidence; actual owner tasks and expert review open | [#24](https://github.com/amy2213/peptide-clarity/issues/24) |
+| G2-EVID-002 | Dated FDA/TSBP authority and multi-platform competitor capability desk audit | G2 evidence | Desk evidence documented; N=1 and qualified review outstanding | [G2 research](G2_COMPETITIVE_AND_REGULATORY_AUDIT_2026-11-09.md) |
+| DATA-008 | Baseline company-lot-source evidence reconciliation | Research quality | Legacy data enumerated; direct lab confirmation still absent | [Supplier audit](DATA-008_LEGACY_SUPPLIER_EVIDENCE_RECONCILIATION_2026-11-09.md) |
+| OPS-002 | Provision dedicated Peptide Clarity staging on owner-approved Supabase organization and plan | Infrastructure G3 | **Blocked: owner organization choice and cost decision** | [#26](https://github.com/amy2213/peptide-clarity/issues/26) |
 | QA-012 | Validate iPhone, accessibility, live hosting, expert sources and supplier provenance | Verification | Open | [#12](https://github.com/amy2213/peptide-clarity/issues/12) |
 | OPS-001 | Enforce review and CI checks in repository settings | Operations | Open | [#13](https://github.com/amy2213/peptide-clarity/issues/13) |
 
