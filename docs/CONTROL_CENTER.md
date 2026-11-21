@@ -66,6 +66,11 @@
 - [DATA-008 | Five-company supplier evidence reconciliation](DATA-008_LEGACY_SUPPLIER_EVIDENCE_RECONCILIATION_2026-11-09.md): 15 legacy observations, 14 candidate seller/lot groups, one direct PDF/report URL, zero independently authenticated issuers/custody.
 - [OPS-002 | Supabase hosted staging readiness and cost decision](OPS-002_SUPABASE_STAGING_READINESS_v0.1.md): distinct project/permissions and twelve unexecuted hosted acceptance cases. Requires **explicit organization choice** and acceptance of any nonzero quoted cost. Do not touch CareerOS.
 
+### OPS-002 hosted staging execution (2026-11-21)
+
+- [Hosted staging migration and authorization audit](OPS-002_STAGING_EXECUTION_EVIDENCE_2026-11-21.md): Dedicated Peptide Clarity Staging project created by owner and confirmed; 84 substances, 41 source records and all 190 archived raw records imported into private `poc` schema. Separate restricted `pc_preview` read model contains 84 substances, 37 claims, five companies, 15 lot observations, five evidence issues. Zero public-approved releases.
+- **Partial security evidence only:** RLS, grants and default-deny roles inspected in hosted DB; direct HTTP/API hostile-client tests, independent preview login, backup/restore, hosted Next.js integration and applicable G2/G3/G7 gates remain open. CareerOS unchanged.
+
 ## Baseline review snapshot
 
 - Current `index.html` is an embedded-data static prototype: 84 indexed names, 13 preliminary source-linked profiles, 41 source records, five supplier dossiers and 15 lot associations.
