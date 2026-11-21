@@ -2,6 +2,14 @@
 
 The entries here summarize **repository changes**, not independently verified medical information or formal public-product launch approval. See [controlled release history](docs/RELEASE_HISTORY.md) and [development control center](docs/CONTROL_CENTER.md).
 
+## 2026-11-21 | OPS-002 · Hosted staging baseline validated
+
+- Confirmed owner-created Peptide Clarity Staging Supabase project is separate from CareerOS, active PostgreSQL 17.11 in `us-east-1`; CareerOS not touched.
+- Installed approved private `poc` legacy schema and owner-only `pc_preview` RLS/projection schema in two recorded hosted migrations. Imported and reconciled 84 substances, 104 aliases, 41 sources, 37 claims, 47 claim-source links, 15 original lot rows and all 190 raw records.
+- Seeded one owner-preview-only snapshot with `public_approved=false`, zero inferred FDA-approved products or authenticated laboratory reports.
+- Hosted permission **metadata** checks indicate unauthorized schema/grants denied and six scoped preview policies installed. Direct anonymous API/role tests, hosted Next.js integration, backup/restore and G2/G3/G7 gate approvals still open.
+- [Full hosted execution evidence](docs/OPS-002_STAGING_EXECUTION_EVIDENCE_2026-11-21.md).
+
 ## 2026-11-09 | G2-EVID-002 / DATA-008 / OPS-002 · Evidence and hosted staging readiness
 
 - Extended primary FDA/Texas pharmacy source desk audit and assessed four competitor/comparator workflows with specific source/date and uncertainty limitations.
