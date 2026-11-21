@@ -45,7 +45,7 @@ jobs:
           node-version: '22'
       - name: Create private legacy data and owner-preview projections
         run: |
-          docker run --rm --network host -e PGPASSWORD=ci-only-postgres-password -v "$GITHUB_WORKSPACE":/work:ro postgres:17 psql -h 127.0.0.1 -U postgres -d poc_test -v ON_ERROR_STOP=1 -f /work/poc/sql/postgres/001_legacy_evidence.sql -f /work/poc/sql/postgres/002_import_legacy.sql -f /work/poc/sql/postgres/003_verify.sql -f /work/poc/sql/postgres/004_owner_preview_security.sql -f /work/poc/sql/postgres/005_seed_owner_preview.sql -f /work/poc/sql/postgres/006_verify_owner_preview.sql
+          docker run --rm --network host -e PGPASSWORD=ci-only-postgres-password -v "$GITHUB_WORKSPACE":/work:ro postgres:17 psql -h 127.0.0.1 -U postgres -d poc_test -v ON_ERROR_STOP=1 -f /work/poc/sql/postgres/001_legacy_evidence.sql -f /work/poc/sql/postgres/002_import_legacy.sql -f /work/poc/sql/postgres/003_verify.sql -f /work/poc/sql/postgres/004_owner_preview_security.sql -f /work/poc/sql/postgres/005_seed_owner_preview.sql -f /work/poc/sql/postgres/006_verify_owner_preview.sql -f /work/poc/sql/postgres/007_hosted_reader_role.sql -f /work/poc/sql/postgres/008_verify_hosted_reader.sql
       - name: Create read-only CI login and test its real grants
         run: |
           docker run --rm --network host -e PGPASSWORD=ci-only-postgres-password postgres:17 psql -h 127.0.0.1 -U postgres -d poc_test -v ON_ERROR_STOP=1 -c "CREATE ROLE pc_ci_web LOGIN IN ROLE pc_preview_reader PASSWORD 'ci-only-web-password';"
