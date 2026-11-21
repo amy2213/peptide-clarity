@@ -1,7 +1,7 @@
 # OPS-003 | Hosted DB Connection Guard and Source Recovery Rehearsal
 
-**Date:** 2026-11-21 (America/Chicago)  
-**Status:** Bounded implementation and private-research recovery validation. **No hosted Next.js deployment or general-public release.**  
+**Date:** 2026-11-21 (America/Chicago)\
+**Status:** Bounded implementation and private-research recovery validation. **No hosted Next.js deployment or general-public release.**\
 **Parent:** [OPS-002 hosted staging evidence](OPS-002_STAGING_EXECUTION_EVIDENCE_2026-11-21.md), [OPS-003 issue #29](https://github.com/amy2213/peptide-clarity/issues/29), PDP-001 v1.0 owner-approved product scope, GOV-001 gate controls.
 
 ## 1. Protected target
