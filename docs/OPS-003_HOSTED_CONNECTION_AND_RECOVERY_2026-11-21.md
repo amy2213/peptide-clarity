@@ -1,7 +1,7 @@
 # OPS-003 | Hosted DB Connection Guard and Source Recovery Rehearsal
 
 **Date:** 2026-11-21 (America/Chicago)\
-**Status:** Bounded implementation and private-research recovery validation. **No hosted Next.js deployment or general-public release.**\
+**Status:** Connection guard, disposable CI tests, archived-source recovery, and hosted NOLOGIN restricted role **VERIFIED**. No hosted Next.js deployment or general-public release.\
 **Parent:** [OPS-002 hosted staging evidence](OPS-002_STAGING_EXECUTION_EVIDENCE_2026-11-21.md), [OPS-003 issue #29](https://github.com/amy2213/peptide-clarity/issues/29), PDP-001 v1.0 owner-approved product scope, GOV-001 gate controls.
 
 ## 1. Protected target
@@ -30,7 +30,7 @@ A read-only recovery test was executed in the dedicated Supabase project. It:
 4. Checked unique IDs for reconstructed collections and verified zero orphan claims, missing claim-source IDs, or orphan lot-substance references.
 5. Dropped all temporary tables automatically. It did not mutate primary research or publication data.
 
-**Test result:** Source-archive reconstruction and referential integrity **PASSED** in hosted Supabase.
+**Test result:** Source-archive reconstruction and referential integrity **PASSED** in hosted Supabase (2026-11-21). In addition, controlled migration `20261121182430_pc_staging_readonly_nologin_role` created `pc_stage_web` as a `NOLOGIN` role inheriting only `pc_preview_reader`. Hosted role metadata checks confirmed: no superuser/role/database creation/bypass-RLS privileges; owner-preview SELECT permitted; raw schema SELECT, snapshot UPDATE and raw schema USAGE denied. No password was created.
 
 **Explicit limit:** This was **not** a complete database, role/policy, object-storage or disaster-recovery restoration. A real recovery drill must restore an export to an isolated database, test the schema versions, grants, audit history, content hashes and server application routes, and measure RPO/RTO. The Free plan's actual backup/export options need verification; no guaranteed automated backup is claimed.
 
@@ -42,8 +42,8 @@ A read-only recovery test was executed in the dedicated Supabase project. It:
 | OPS-S03/S04 | Insecure options, CareerOS and arbitrary Postgres projects rejected | Covered by new Node negative tests in PR |
 | OPS-S05/S06 | Superuser, service, editor identities rejected; CI mode impossible on hosted DB | Covered by new Node negative tests in PR |
 | OPS-S07/S08 | Custom CA preserves verification; error text never includes password | Covered by new Node unit tests in PR |
-| OPS-R01 | Staging role exists as `NOLOGIN` and inherits only `pc_preview_reader` | Verify after hosted migration is applied |
-| OPS-R02 | App role cannot read `poc`, change `pc_preview.snapshots`, or change publication state | CI with disposable Postgres and later hosted restricted login |
+| OPS-R01 | Staging role exists as `NOLOGIN` and inherits only `pc_preview_reader` | **PASS hosted**: migration and privilege metadata readback |
+| OPS-R02 | App role cannot read `poc`, change `pc_preview.snapshots`, or change publication state | **PARTIAL**: disposable PG role tests PASS and hosted grants inspection PASS; actual hosted LOGIN not enabled or tested |
 | OPS-R03 | Anonymous/external Data API cannot read private schemas, even if knowing exact table names | Still requires real external request |
 | OPS-R04 | Separate hosted Next.js API with protected owner auth, no secrets in browser, correct research counts | Not run against hosted project |
 | OPS-R05 | Full backup/restore, provider recovery and incident process | Not run |
@@ -65,4 +65,4 @@ Do **not** create or deploy a public Vercel project while that access is missing
 - Full recoverability method documented, export/recovery tested to the extent supported by the actual plan.
 - G2 user/evidence validation, G3 review, G6 security/accessibility/content and G7 public launch remain separately governed.
 
-**Current disposition:** Source archive recovery test passed; safe application configuration and disposable role tests under review. No end-to-end hosted app access or public publication verified.
+**Current disposition:** Source archive recovery, restricted-role creation and hosted grant inspection passed; all three latest PR CI workflows (structural QA #58, relational POC #31, owner-preview staging security #17) passed. End-to-end restricted hosted app access, true external Data API tests and complete backup/restore remain unverified. No public publication authorized.
