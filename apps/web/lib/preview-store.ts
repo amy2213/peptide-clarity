@@ -1,14 +1,14 @@
 import pg from "pg";
+import { getPreviewDbConfig } from "./db-connection.mjs";
 
 const { Pool } = pg;
 const snapshotId = "v091-internal-owner-preview";
 let instance: pg.Pool | undefined;
 
 function pool(): pg.Pool {
-  if (!process.env.DATABASE_URL) throw new Error("DATABASE_URL missing");
   if (!instance) {
     instance = new Pool({
-      connectionString: process.env.DATABASE_URL,
+      ...getPreviewDbConfig(process.env),
       max: 3,
       connectionTimeoutMillis: 3500,
       idleTimeoutMillis: 15000,
