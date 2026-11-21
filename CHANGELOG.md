@@ -2,6 +2,14 @@
 
 The entries here summarize **repository changes**, not independently verified medical information or formal public-product launch approval. See [controlled release history](docs/RELEASE_HISTORY.md) and [development control center](docs/CONTROL_CENTER.md).
 
+## 2026-11-21 | OPS-003 · Restricted hosted staging role and connection guard
+
+- Added fail-closed staging connection validation requiring correct Peptide Clarity Supabase project, scoped reader identity and verified TLS; prevented CareerOS/superuser connections. Local CI exception restricted to disposable localhost.
+- Applied hosted migration to create `pc_stage_web` **NOLOGIN** with owner-preview read privileges only; grants and privilege metadata verified without creating an application password.
+- Reconstructed archived research JSON in transaction-local temporary tables, verified checksum and foreign-key relationships; this is **not a full backup-and-restore drill**.
+- CI structural, relational and Next.js API smoke/negative tests passed. Hosted Vercel deployment and external anonymous-client tests remain blocked pending provider authorization and secure secrets.
+- [OPS-003 report](docs/OPS-003_HOSTED_CONNECTION_AND_RECOVERY_2026-11-21.md). No public site changes or G3/G7 release approval.
+
 ## 2026-11-21 | OPS-002 · Hosted staging baseline validated
 
 - Confirmed owner-created Peptide Clarity Staging Supabase project is separate from CareerOS, active PostgreSQL 17.11 in `us-east-1`; CareerOS not touched.
