@@ -11,7 +11,7 @@ BEGIN
   ) THEN
     RAISE EXCEPTION 'Existing pc_stage_web has elevated privileges or LOGIN; manual review required';
   END IF;
-END $;
+END $$;
 GRANT pc_preview_reader TO pc_stage_web;
 REVOKE ALL ON SCHEMA poc FROM pc_stage_web;
 REVOKE ALL ON ALL TABLES IN SCHEMA poc FROM pc_stage_web;
