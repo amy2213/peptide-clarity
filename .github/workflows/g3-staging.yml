@@ -5,6 +5,7 @@ on:
       - 'apps/web/**'
       - 'poc/sql/postgres/**'
       - 'poc/tests/owner-preview-http.test.mjs'
+      - 'poc/tests/hosted-db-config.test.mjs'
       - '.github/workflows/g3-staging.yml'
   workflow_dispatch:
 
@@ -33,6 +34,8 @@ jobs:
       PREVIEW_ACCESS_TOKEN: ci-only-preview-token-at-least-32-characters-never-use-production
       POC_HTTP_BASE: http://127.0.0.1:3100
       NEXT_TELEMETRY_DISABLED: '1'
+      PC_DATABASE_MODE: 'ci'
+      PC_ALLOW_DISPOSABLE_LOCAL_TEST: 'true'
     steps:
       - name: Checkout isolated owner-preview application
         uses: actions/checkout@v4
@@ -47,6 +50,8 @@ jobs:
         run: |
           docker run --rm --network host -e PGPASSWORD=ci-only-postgres-password postgres:17 psql -h 127.0.0.1 -U postgres -d poc_test -v ON_ERROR_STOP=1 -c "CREATE ROLE pc_ci_web LOGIN IN ROLE pc_preview_reader PASSWORD 'ci-only-web-password';"
           test "$(docker run --rm --network host -e PGPASSWORD=ci-only-web-password postgres:17 psql -h 127.0.0.1 -U pc_ci_web -d poc_test -tAc 'SELECT count(*) FROM pc_preview.substances' | tr -d '[:space:]')" = "84"
+      - name: Reject remote and privileged connection configurations
+        run: node --test poc/tests/hosted-db-config.test.mjs
       - name: Install isolated Next.js dependencies
         run: npm ci --prefix apps/web --no-audit --no-fund
       - name: Check TypeScript and create production build
